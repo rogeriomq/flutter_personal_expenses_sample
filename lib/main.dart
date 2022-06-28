@@ -22,10 +22,10 @@ class ExpensesApp extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        appBarTheme: const AppBarTheme(
+        appBarTheme: AppBarTheme(
           titleTextStyle: TextStyle(
             fontFamily: 'OpenSans',
-            fontSize: 22,
+            fontSize: 20 * MediaQuery.textScaleFactorOf(context),
             fontWeight: FontWeight.bold,
           ),
         ),

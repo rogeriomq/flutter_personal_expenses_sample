@@ -23,11 +23,14 @@ class ChartBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FittedBox(
-          child: Text(
-            _currencyFormat(value),
-            style: const TextStyle(
-              fontSize: 9,
+        SizedBox(
+          height: 20,
+          child: FittedBox(
+            child: Text(
+              _currencyFormat(value),
+              style: const TextStyle(
+                fontSize: 9,
+              ),
             ),
           ),
         ),

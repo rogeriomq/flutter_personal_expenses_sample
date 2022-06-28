@@ -31,8 +31,7 @@ class Chart extends StatelessWidget {
           }
         }
 
-        print(DateFormat.E().format(weekDay)[0]);
-        print(totalSum);
+        debugPrint('call groupedTransactions');
 
         return {
           'weekDay': DateFormat.E().format(weekDay)[0],
@@ -40,7 +39,7 @@ class Chart extends StatelessWidget {
           'value': totalSum,
         };
       },
-    );
+    ).reversed.toList();
   }
 
   double get _weekTotalValue {
@@ -65,7 +64,9 @@ class Chart extends StatelessWidget {
               child: ChartBar(
                   label: resume['weekDay'],
                   value: resume['value'],
-                  percentage: (resume['value'] as double) / _weekTotalValue),
+                  percentage: _weekTotalValue == 0
+                      ? 0
+                      : (resume['value'] as double) / _weekTotalValue),
             );
           }).toList(),
         ),

@@ -27,6 +27,18 @@ class _HomeScreenState extends State<HomeScreen> {
       value: 103.22,
       date: DateTime.now().subtract(const Duration(days: 1)),
     ),
+    Transaction(
+      id: '3',
+      title: 'Energia',
+      value: 103.22,
+      date: DateTime.now().subtract(const Duration(days: 1)),
+    ),
+    Transaction(
+      id: '4',
+      title: 'Cartão Nubank',
+      value: 1570,
+      date: DateTime.now(),
+    ),
   ];
 
   List<Transaction> get _recentTransactions {
@@ -37,12 +49,16 @@ class _HomeScreenState extends State<HomeScreen> {
     }).toList();
   }
 
-  void _addTransaction({required String title, required double value}) {
+  void _addTransaction({
+    required String title,
+    required double value,
+    DateTime? date,
+  }) {
     final newTransaction = Transaction(
       id: Random(1000).toString(),
       title: title,
       value: value,
-      date: DateTime.now(),
+      date: date ?? DateTime.now(),
     );
 
     setState(() {
@@ -60,24 +76,45 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  _removeTransaction(String id) {
+    setState(() {
+      _transactions.removeWhere((element) => element.id == id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final appBar = AppBar(
+      title: const Text('Despesas Pessoais'),
+      actions: [
+        IconButton(
+          onPressed: () => _openTransactionFormModal(context),
+          icon: const Icon(Icons.add),
+        )
+      ],
+    );
+
+    final availableHeight = MediaQuery.of(context).size.height -
+        appBar.preferredSize.height -
+        MediaQuery.of(context).padding.top;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Despesas Pessoais'),
-        actions: [
-          IconButton(
-            onPressed: () => _openTransactionFormModal(context),
-            icon: const Icon(Icons.add),
-          )
-        ],
-      ),
+      appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Chart(recentTransactions: _recentTransactions),
-            TransactionList(transactions: _transactions),
+            SizedBox(
+              height: availableHeight * 0.18,
+              child: Chart(recentTransactions: _recentTransactions),
+            ),
+            SizedBox(
+              height: availableHeight * 0.82,
+              child: TransactionList(
+                transactions: _transactions,
+                onRemove: _removeTransaction,
+              ),
+            ),
           ],
         ),
       ),
