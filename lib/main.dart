@@ -7,6 +7,10 @@ class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = ThemeData(primarySwatch: Colors.purple);
+    // Fix Orientation of the App
+    // SystemChrome.setPreferredOrientations([
+    //   DeviceOrientation.portraitUp,
+    // ]);
 
     return MaterialApp(
       theme: theme.copyWith(
