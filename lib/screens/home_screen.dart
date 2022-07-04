@@ -21,54 +21,54 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _showChart = false;
 
   final List<Transaction> _transactions = [
-    Transaction(
-      id: _uuid.v1(),
-      title: 'Agua',
-      value: 200,
-      date: DateTime.now().subtract(const Duration(days: 2)),
-    ),
-    Transaction(
-      id: _uuid.v1(),
-      title: 'Energia',
-      value: 103.22,
-      date: DateTime.now().subtract(const Duration(days: 1)),
-    ),
-    Transaction(
-      id: _uuid.v1(),
-      title: 'Energia',
-      value: 103.22,
-      date: DateTime.now().subtract(const Duration(days: 1)),
-    ),
-    Transaction(
-      id: _uuid.v1(),
-      title: 'Cartão Nubank',
-      value: 1570,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: _uuid.v1(),
-      title: 'Agua',
-      value: 200,
-      date: DateTime.now().subtract(const Duration(days: 2)),
-    ),
-    Transaction(
-      id: _uuid.v1(),
-      title: 'Energia',
-      value: 103.22,
-      date: DateTime.now().subtract(const Duration(days: 1)),
-    ),
-    Transaction(
-      id: _uuid.v1(),
-      title: 'Energia',
-      value: 103.22,
-      date: DateTime.now().subtract(const Duration(days: 1)),
-    ),
-    Transaction(
-      id: _uuid.v1(),
-      title: 'Cartão Nubank',
-      value: 1570,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: _uuid.v1(),
+    //   title: 'Agua',
+    //   value: 200,
+    //   date: DateTime.now().subtract(const Duration(days: 2)),
+    // ),
+    // Transaction(
+    //   id: _uuid.v1(),
+    //   title: 'Energia',
+    //   value: 103.22,
+    //   date: DateTime.now().subtract(const Duration(days: 1)),
+    // ),
+    // Transaction(
+    //   id: _uuid.v1(),
+    //   title: 'Energia',
+    //   value: 103.22,
+    //   date: DateTime.now().subtract(const Duration(days: 1)),
+    // ),
+    // Transaction(
+    //   id: _uuid.v1(),
+    //   title: 'Cartão Nubank',
+    //   value: 1570,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: _uuid.v1(),
+    //   title: 'Agua',
+    //   value: 200,
+    //   date: DateTime.now().subtract(const Duration(days: 2)),
+    // ),
+    // Transaction(
+    //   id: _uuid.v1(),
+    //   title: 'Energia',
+    //   value: 103.22,
+    //   date: DateTime.now().subtract(const Duration(days: 1)),
+    // ),
+    // Transaction(
+    //   id: _uuid.v1(),
+    //   title: 'Energia',
+    //   value: 103.22,
+    //   date: DateTime.now().subtract(const Duration(days: 1)),
+    // ),
+    // Transaction(
+    //   id: _uuid.v1(),
+    //   title: 'Cartão Nubank',
+    //   value: 1570,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   List<Transaction> get _recentTransactions {
