@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -86,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
     DateTime? date,
   }) {
     final newTransaction = Transaction(
-      id: Random(1000).toString(),
+      id: _uuid.v1(),
       title: title,
       value: value,
       date: date ?? DateTime.now(),
