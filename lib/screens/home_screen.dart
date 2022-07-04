@@ -3,8 +3,8 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_expenses/components/chart/chart.dart';
-import 'package:personal_expenses/components/transaction_form.dart';
-import 'package:personal_expenses/components/transaction_list.dart';
+import 'package:personal_expenses/components/transaction/transaction_form.dart';
+import 'package:personal_expenses/components/transaction/transaction_list.dart';
 import 'package:personal_expenses/models/transaction.dart';
 import 'package:uuid/uuid.dart';
 

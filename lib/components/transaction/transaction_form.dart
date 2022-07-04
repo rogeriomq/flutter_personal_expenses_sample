@@ -53,16 +53,6 @@ class _TransactionFormState extends State<TransactionForm> {
                 ),
               ),
               const SizedBox(height: 30),
-              // TextField(
-              //   controller: _titleController,
-              //   decoration: const InputDecoration(
-              //     labelText: 'Title',
-              //     labelStyle: TextStyle(
-              //       color: Colors.purple,
-              //     ),
-              //     focusColor: Colors.purpleAccent,
-              //   ),
-              // ),
               AdaptiveTextField(
                 label: 'Title',
                 controller: _titleController,
@@ -73,7 +63,6 @@ class _TransactionFormState extends State<TransactionForm> {
                 inputType: const TextInputType.numberWithOptions(
                     decimal: true, signed: true),
               ),
-
               const SizedBox(height: 20),
               AdaptiveDatePicker(
                 selectedDate: _dateSelected,

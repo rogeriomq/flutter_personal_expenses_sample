@@ -1,7 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
 import 'package:flutter/material.dart';
-import 'package:personal_expenses/components/transaction_list_item_stateless.dart';
+import 'package:personal_expenses/components/transaction/transaction_list_item_stateless.dart';
 import 'package:personal_expenses/models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
