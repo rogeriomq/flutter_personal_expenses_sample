@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+
 import 'package:flutter/material.dart';
-import 'package:personal_expenses/components/transaction_list_item.dart';
+import 'package:personal_expenses/components/transaction_list_item_stateless.dart';
 import 'package:personal_expenses/models/transaction.dart';
 
 class TransactionList extends StatelessWidget {
@@ -39,8 +40,15 @@ class TransactionList extends StatelessWidget {
             itemCount: transactions.length,
             itemBuilder: (ctx, index) {
               final currentTransaction = transactions[index];
+              debugPrint(currentTransaction.id);
+              // TIPS::: With StateFul, use GlobalObjectKey for sync state(Bug with ValueKey)
+              // return TransactionListItemStateFul(
+              //   key: GlobalObjectKey(currentTransaction),
+              //   currentTransaction: currentTransaction,
+              //   onRemove: onRemove,
+              // );
 
-              return TransactionListItem(
+              return TransactionListItemStateless(
                 currentTransaction: currentTransaction,
                 onRemove: onRemove,
               );

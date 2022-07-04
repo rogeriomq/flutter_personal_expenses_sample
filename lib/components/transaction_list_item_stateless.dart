@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:personal_expenses/models/transaction.dart';
 
-class TransactionListItem extends StatelessWidget {
-  const TransactionListItem({
+class TransactionListItemStateless extends StatelessWidget {
+  final Transaction currentTransaction;
+  final void Function(String p1) onRemove;
+  final Color? backgroundColor;
+
+  const TransactionListItemStateless({
     Key? key,
     required this.currentTransaction,
     required this.onRemove,
+    this.backgroundColor,
   }) : super(key: key);
-
-  final Transaction currentTransaction;
-  final void Function(String p1) onRemove;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,7 @@ class TransactionListItem extends StatelessWidget {
       child: ListTile(
         leading: CircleAvatar(
           radius: 30,
+          backgroundColor: backgroundColor,
           child: Padding(
             padding: const EdgeInsets.all(6),
             child: FittedBox(child: Text(currentTransaction.getCurrency())),
